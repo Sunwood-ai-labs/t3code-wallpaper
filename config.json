@@ -1,0 +1,8 @@
+{
+  "image": "wallpaper.jpg",
+  "veil": 78,
+  "sidebar": true,
+  "port": 9333,
+  "sidebarVeil": 55,
+  "sidebarBlur": 18
+}
