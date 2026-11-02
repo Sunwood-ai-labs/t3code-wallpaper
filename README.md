@@ -25,7 +25,7 @@ T3 Code (Nightly) の背景に画像を敷く。アプリのファイルは書�
 - 外すには、壁紙付きショートカットを使わないだけでよい。
 
 ## 必要なもの
-- Windows、T3 Code (Nightly)（`%LOCALAPPDATA%\Programs	3code` に入れた版）、Node.js 22 以上（組み込みの WebSocket を使う）。
+- Windows、T3 Code (Nightly)（`%LOCALAPPDATA%\Programs\t3code` に入れた版）、Node.js 22 以上（組み込みの WebSocket を使う）。
 - 動作を確かめたのは Windows 11 と T3 Code Nightly 0.1.7 だけ。
 
 ## ライセンス
