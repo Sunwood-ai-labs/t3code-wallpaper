@@ -1,33 +1,57 @@
-# T3 Code 壁紙パッチ
+<p align="center">
+  <a href="README.md"><img src="assets/language-en-active.svg" alt="English — selected" width="92" height="32"></a>
+  <a href="README.ja.md"><img src="assets/language-ja.svg" alt="日本語" width="86" height="32"></a>
+</p>
+<p align="center">
+  <img src="assets/header.svg" alt="T3 Code Wallpaper — your image behind T3 Code, with a frosted-glass sidebar" width="1280">
+</p>
+<h1 align="center">T3 Code Wallpaper</h1>
 
-T3 Code (Nightly) の背景に画像を敷く。アプリのファイルは書き換えず、起動中のアプリに CSS を差し込む。自動更新で消えない。
+**Put your own image behind T3 Code (Nightly), and blur it through the sidebar.** The app's files are never modified: a small script injects CSS into the running app, so auto-updates do not remove it.
 
-![壁紙を敷いた T3 Code。左のサイドバーは壁紙をぼかして透かしている](docs/screenshot.jpg)
+## Screenshots
 
-## 使い方
-- デスクトップの「T3 Code (壁紙付き)」から起動する。通常のショートカットで起動すると壁紙は付かない。
-- すでに T3 Code が通常モードで動いている場合は、いったん終了してから開く。
+Light theme:
 
-## 設定（config.json）
-- `image`: 画像のパス（このフォルダからの相対、または絶対）。jpg/png。大きい画像は重くなるので、1〜2MB 程度までを勧める。
-- `veil`: 画像の上に重ねる画面色の濃さ（0〜100）。大きいほど文字が読みやすく、壁紙は薄くなる。
-- `sidebar`: true にすると、左のサイドバーも半透明にして、壁紙を透かしてぼかす（すりガラス）。
-- `sidebarVeil`: サイドバーに重ねる画面色の濃さ（0〜100）。小さいほど壁紙が透ける。今は55。
-- `sidebarBlur`: サイドバーのぼかしの強さ（px）。今は18。大きいほど絵がぼやける。0でぼかし無し。
-- `port`: デバッグ用ポート。
+![T3 Code with a wallpaper, light theme](docs/screenshot-light.jpg)
 
-設定を変えたら、T3 Code を終了して、ショートカットから開き直す。
+Dark theme:
 
-## 仕組みと注意
-- `--remote-debugging-port` を 127.0.0.1 限定で付けて起動し、`inject.mjs` が接続して CSS を差し込む。
-- そのポートは、同じPC上の他のプログラムがアプリを操作できる状態になる。気になる場合は使わない時に通常のショートカットで起動する。
-- アプリの更新で画面の構造が変わると、壁紙が効かなくなることがある。その場合は `inject.mjs` の CSS を直す。
-- 外すには、壁紙付きショートカットを使わないだけでよい。
+![T3 Code with a wallpaper, dark theme](docs/screenshot-dark.jpg)
 
-## 必要なもの
-- Windows、T3 Code (Nightly)（`%LOCALAPPDATA%\Programs\t3code` に入れた版）、Node.js 22 以上（組み込みの WebSocket を使う）。
-- 動作を確かめたのは Windows 11 と T3 Code Nightly 0.1.7 だけ。
+The sidebar shows the wallpaper through a blur (frosted glass). The sidebar's thread list was trimmed for the screenshots; the app was not otherwise altered.
 
-## ライセンス
-- コードは MIT（`LICENSE`）。
-- `wallpaper.jpg` は、T3 Code のリポジトリ（MIT、© 2026 T3 Tools Inc.）にある `custom-header-backdrop.png` を JPEG に縮めたもの。好きな画像に差し替えてよい。
+## Use
+
+- Start T3 Code from the `launch.bat` shortcut (e.g. a desktop shortcut named "T3 Code (wallpaper)"). A normal shortcut starts it without the wallpaper.
+- If T3 Code is already running in normal mode, quit it first.
+
+## Configure (`config.json`)
+
+| Key | Meaning |
+|---|---|
+| `image` | Image path (relative to this folder, or absolute). jpg/png. Keep it to about 1–2 MB. |
+| `veil` | Opacity of the theme color laid over the image, 0–100. Higher means more readable text and a fainter wallpaper. |
+| `sidebar` | `true` makes the sidebar translucent and blurs the wallpaper behind it. |
+| `sidebarVeil` | Opacity of the theme color over the sidebar, 0–100. Lower shows more wallpaper. Default 55. |
+| `sidebarBlur` | Sidebar blur in px. Default 18. `0` disables blur. |
+| `port` | Debug port. |
+
+After changing the config, quit T3 Code and start it again from the shortcut.
+
+## How it works, and caveats
+
+- The app is started with `--remote-debugging-port` bound to 127.0.0.1, and `inject.mjs` connects over the Chrome DevTools Protocol to inject a `<style>`.
+- That port lets other programs on the same PC drive the app. If that concerns you, start it from the normal shortcut when you do not need the wallpaper.
+- If an app update changes the page structure, the wallpaper may stop working. Adjust the CSS in `inject.mjs`.
+- To remove it, simply stop using the wallpaper shortcut.
+
+## Requirements
+
+- Windows, T3 Code (Nightly) installed under `%LOCALAPPDATA%\Programs\t3code`, and Node.js 22 or later (uses the built-in WebSocket).
+- Tested only on Windows 11 with T3 Code Nightly 0.1.7.
+
+## License
+
+- Code: MIT (`LICENSE`).
+- `wallpaper.jpg` is a JPEG downscale of `custom-header-backdrop.png` from the T3 Code repository (MIT, © 2026 T3 Tools Inc.). Replace it with any image you like.

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
+  <title id="title">T3 Code Wallpaper</title>
+  <desc id="desc">A wallpaper behind T3 Code, with a frosted-glass sidebar.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B3470"/><stop offset="1" stop-color="#C9A5B8"/></linearGradient>
+  </defs>
+  <rect width="1280" height="400" rx="24" fill="#F5F1E9"/>
+  <path d="M0 325H1280" stroke="#DED5C8"/>
+  <g fill="#42362F">
+    <text x="64" y="178" font-family="DejaVu Sans, Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="-3">T3 Code Wallpaper</text>
+    <text x="67" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="25">Your image behind T3 Code. Frosted-glass sidebar.</text>
+    <text x="65" y="367" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" letter-spacing="2">A RUNTIME CSS PATCH</text>
+  </g>
+  <g transform="translate(820 53)">
+    <rect width="400" height="250" rx="14" fill="url(#g)"/>
+    <rect width="110" height="250" rx="14" fill="#FFFFFF" fill-opacity=".28"/>
+    <g fill="#FFFFFF" fill-opacity=".85">
+      <rect x="16" y="24" width="64" height="9" rx="4"/>
+      <rect x="16" y="56" width="78" height="7" rx="3"/>
+      <rect x="16" y="76" width="60" height="7" rx="3"/>
+      <rect x="16" y="106" width="78" height="7" rx="3"/>
+      <rect x="16" y="126" width="52" height="7" rx="3"/>
+    </g>
+    <rect x="150" y="170" width="220" height="46" rx="12" fill="#FFFFFF" fill-opacity=".35"/>
+  </g>
+</svg>
